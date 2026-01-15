@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useState } from "react";
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis, ResponsiveContainer, Scatter, ScatterChart, ZAxis, Tooltip as RechartsTooltip, Legend } from "recharts"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
@@ -43,6 +44,12 @@ const chartConfigScatter = {
 }
 
 export default function MetricsSection() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+  
   return (
     <section id="metrics" className="py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,6 +78,7 @@ export default function MetricsSection() {
               </CardHeader>
               <CardContent>
                 <ChartContainer config={chartConfigScatter} className="h-[300px] w-full">
+                  {isClient && (
                   <ScatterChart
                     margin={{
                       top: 20,
@@ -87,6 +95,7 @@ export default function MetricsSection() {
                     <Legend />
                     <Scatter name="Proyectos" data={projectPerformanceData} />
                   </ScatterChart>
+                  )}
                 </ChartContainer>
               </CardContent>
             </Card>
@@ -105,6 +114,7 @@ export default function MetricsSection() {
               </CardHeader>
               <CardContent>
                 <ChartContainer config={chartConfigBar} className="h-[300px] w-full">
+                  {isClient && (
                   <BarChart data={stackUsageData} accessibilityLayer>
                     <CartesianGrid vertical={false} />
                     <XAxis
@@ -117,6 +127,7 @@ export default function MetricsSection() {
                     <RechartsTooltip cursor={false} content={<ChartTooltipContent indicator="dot" />} />
                     <Bar dataKey="Proyectos" radius={4} />
                   </BarChart>
+                  )}
                 </ChartContainer>
               </CardContent>
             </Card>
