@@ -5,6 +5,7 @@ import { Bar, BarChart, CartesianGrid, XAxis, YAxis, ResponsiveContainer, Scatte
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 import { motion } from "framer-motion"
+import { Skeleton } from "../ui/skeleton";
 
 const projectPerformanceData = [
   { project: "TB-Detector", "Complejidad": 8, "Impacto": 9.5, fill: "hsl(var(--primary))" },
@@ -76,27 +77,29 @@ export default function MetricsSection() {
                 <CardTitle>Complejidad vs. Impacto de Proyectos</CardTitle>
                 <CardDescription>Evaluación del esfuerzo relativo frente al valor generado por cada proyecto.</CardDescription>
               </CardHeader>
-              <CardContent>
-                <ChartContainer config={chartConfigScatter} className="h-[300px] w-full">
-                  {isClient && (
-                  <ScatterChart
-                    margin={{
-                      top: 20,
-                      right: 20,
-                      bottom: 20,
-                      left: 20,
-                    }}
-                  >
-                    <CartesianGrid />
-                    <XAxis type="number" dataKey="Complejidad" name="Complejidad" unit="" />
-                    <YAxis type="number" dataKey="Impacto" name="Impacto" unit="" />
-                    <ZAxis type="string" dataKey="project" name="Proyecto" />
-                    <RechartsTooltip cursor={{ strokeDasharray: '3 3' }} content={<ChartTooltipContent />} />
-                    <Legend />
-                    <Scatter name="Proyectos" data={projectPerformanceData} />
-                  </ScatterChart>
-                  )}
-                </ChartContainer>
+              <CardContent className="h-[300px] w-full">
+                {isClient ? (
+                  <ChartContainer config={chartConfigScatter} className="h-full w-full">
+                    <ScatterChart
+                      margin={{
+                        top: 20,
+                        right: 20,
+                        bottom: 20,
+                        left: 20,
+                      }}
+                    >
+                      <CartesianGrid />
+                      <XAxis type="number" dataKey="Complejidad" name="Complejidad" unit="" />
+                      <YAxis type="number" dataKey="Impacto" name="Impacto" unit="" />
+                      <ZAxis type="string" dataKey="project" name="Proyecto" />
+                      <RechartsTooltip cursor={{ strokeDasharray: '3 3' }} content={<ChartTooltipContent />} />
+                      <Legend />
+                      <Scatter name="Proyectos" data={projectPerformanceData} />
+                    </ScatterChart>
+                  </ChartContainer>
+                ) : (
+                  <Skeleton className="h-full w-full" />
+                )}
               </CardContent>
             </Card>
           </motion.div>
@@ -112,23 +115,25 @@ export default function MetricsSection() {
                 <CardTitle>Stack Tecnológico Más Usado</CardTitle>
                 <CardDescription>Frecuencia de uso de tecnologías clave en los proyectos destacados.</CardDescription>
               </CardHeader>
-              <CardContent>
-                <ChartContainer config={chartConfigBar} className="h-[300px] w-full">
-                  {isClient && (
-                  <BarChart data={stackUsageData} accessibilityLayer>
-                    <CartesianGrid vertical={false} />
-                    <XAxis
-                      dataKey="name"
-                      tickLine={false}
-                      tickMargin={10}
-                      axisLine={false}
-                    />
-                    <YAxis />
-                    <RechartsTooltip cursor={false} content={<ChartTooltipContent indicator="dot" />} />
-                    <Bar dataKey="Proyectos" radius={4} />
-                  </BarChart>
-                  )}
-                </ChartContainer>
+              <CardContent className="h-[300px] w-full">
+                {isClient ? (
+                  <ChartContainer config={chartConfigBar} className="h-full w-full">
+                    <BarChart data={stackUsageData} accessibilityLayer>
+                      <CartesianGrid vertical={false} />
+                      <XAxis
+                        dataKey="name"
+                        tickLine={false}
+                        tickMargin={10}
+                        axisLine={false}
+                      />
+                      <YAxis />
+                      <RechartsTooltip cursor={false} content={<ChartTooltipContent indicator="dot" />} />
+                      <Bar dataKey="Proyectos" radius={4} />
+                    </BarChart>
+                  </ChartContainer>
+                ) : (
+                  <Skeleton className="h-full w-full" />
+                )}
               </CardContent>
             </Card>
           </motion.div>
