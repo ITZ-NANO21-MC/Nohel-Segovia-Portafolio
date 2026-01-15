@@ -1,11 +1,11 @@
 "use client"
 
-import { useEffect, useState } from "react";
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis, ResponsiveContainer, Scatter, ScatterChart, ZAxis, Tooltip as RechartsTooltip, Legend } from "recharts"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 import { motion } from "framer-motion"
 import { Skeleton } from "../ui/skeleton";
+import ClientOnly from "../ClientOnly";
 
 const projectPerformanceData = [
   { project: "TB-Detector", "Complejidad": 8, "Impacto": 9.5, fill: "hsl(var(--primary))" },
@@ -45,11 +45,6 @@ const chartConfigScatter = {
 }
 
 export default function MetricsSection() {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
   
   return (
     <section id="metrics" className="py-24 bg-background">
@@ -78,7 +73,7 @@ export default function MetricsSection() {
                 <CardDescription>Evaluación del esfuerzo relativo frente al valor generado por cada proyecto.</CardDescription>
               </CardHeader>
               <CardContent className="h-[300px] w-full">
-                {isClient ? (
+                <ClientOnly fallback={<Skeleton className="h-full w-full" />}>
                   <ChartContainer config={chartConfigScatter} className="h-full w-full">
                     <ScatterChart
                       margin={{
@@ -97,9 +92,7 @@ export default function MetricsSection() {
                       <Scatter name="Proyectos" data={projectPerformanceData} />
                     </ScatterChart>
                   </ChartContainer>
-                ) : (
-                  <Skeleton className="h-full w-full" />
-                )}
+                </ClientOnly>
               </CardContent>
             </Card>
           </motion.div>
@@ -116,7 +109,7 @@ export default function MetricsSection() {
                 <CardDescription>Frecuencia de uso de tecnologías clave en los proyectos destacados.</CardDescription>
               </CardHeader>
               <CardContent className="h-[300px] w-full">
-                {isClient ? (
+                <ClientOnly fallback={<Skeleton className="h-full w-full" />}>
                   <ChartContainer config={chartConfigBar} className="h-full w-full">
                     <BarChart data={stackUsageData} accessibilityLayer>
                       <CartesianGrid vertical={false} />
@@ -131,9 +124,7 @@ export default function MetricsSection() {
                       <Bar dataKey="Proyectos" radius={4} />
                     </BarChart>
                   </ChartContainer>
-                ) : (
-                  <Skeleton className="h-full w-full" />
-                )}
+                </ClientOnly>
               </CardContent>
             </Card>
           </motion.div>
