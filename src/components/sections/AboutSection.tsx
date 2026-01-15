@@ -42,16 +42,6 @@ export default function AboutSection() {
           >
             <Card>
               <CardContent className="p-6">
-                {profileImage && (
-                  <Image
-                    src={profileImage.imageUrl}
-                    alt={profileImage.description}
-                    width={400}
-                    height={400}
-                    className="rounded-lg w-full object-cover aspect-square shadow-lg"
-                    data-ai-hint={profileImage.imageHint}
-                  />
-                )}
                 <div className="mt-6 text-center">
                   <h3 className="text-2xl font-bold">Nohel Segovia</h3>
                   <p className="text-primary">Fullstack & ML Developer</p>
