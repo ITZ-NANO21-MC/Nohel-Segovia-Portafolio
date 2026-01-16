@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from 'react';
 import { useForm, type SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import emailjs from '@emailjs/browser';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -10,7 +12,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent } from '@/components/ui/card';
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Loader2, Mail, MapPin, Phone } from 'lucide-react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { motion } from 'framer-motion';
@@ -26,6 +28,7 @@ type FormValues = z.infer<typeof formSchema>;
 
 export default function ContactSection() {
   const { toast } = useToast();
+  const [isSending, setIsSending] = useState(false);
   const mapImage = PlaceHolderImages.find(p => p.id === 'map-location');
 
   const form = useForm<FormValues>({
@@ -38,16 +41,31 @@ export default function ContactSection() {
     },
   });
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
-    // Aquí iría la lógica para enviar el correo con EmailJS
-    // Ejemplo: emailjs.send('service_id', 'template_id', data, 'user_id')
-    console.log('Form data:', data);
+  const onSubmit: SubmitHandler<FormValues> = async (data) => {
+    setIsSending(true);
 
-    toast({
-      title: '¡Formulario Enviado!',
-      description: 'Gracias por tu mensaje. Me pondré en contacto contigo pronto.',
-    });
-    form.reset();
+    try {
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
+
+      await emailjs.send(serviceId, templateId, data, publicKey);
+      
+      toast({
+        title: '¡Formulario Enviado!',
+        description: 'Gracias por tu mensaje. Me pondré en contacto contigo pronto.',
+      });
+      form.reset();
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      toast({
+        variant: 'destructive',
+        title: 'Error al enviar',
+        description: 'Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo.',
+      });
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -83,7 +101,7 @@ export default function ContactSection() {
                         <FormItem>
                           <FormLabel>Nombre</FormLabel>
                           <FormControl>
-                            <Input placeholder="Tu nombre" {...field} />
+                            <Input placeholder="Tu nombre" {...field} disabled={isSending} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -96,7 +114,7 @@ export default function ContactSection() {
                         <FormItem>
                           <FormLabel>Correo Electrónico</FormLabel>
                           <FormControl>
-                            <Input placeholder="tu@correo.com" {...field} />
+                            <Input placeholder="tu@correo.com" {...field} disabled={isSending} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -108,7 +126,7 @@ export default function ContactSection() {
                       render={({ field }) => (
                         <FormItem>
                           <FormLabel>Tipo de Consulta</FormLabel>
-                          <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <Select onValueChange={field.onChange} defaultValue={field.value} disabled={isSending}>
                             <FormControl>
                               <SelectTrigger>
                                 <SelectValue placeholder="Selecciona una opción" />
@@ -132,14 +150,15 @@ export default function ContactSection() {
                         <FormItem>
                           <FormLabel>Mensaje</FormLabel>
                           <FormControl>
-                            <Textarea placeholder="Cuéntame sobre tu idea..." {...field} />
+                            <Textarea placeholder="Cuéntame sobre tu idea..." {...field} disabled={isSending} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
                       )}
                     />
-                    <Button type="submit" className="w-full" disabled={form.formState.isSubmitting}>
-                      Enviar Mensaje
+                    <Button type="submit" className="w-full" disabled={isSending}>
+                      {isSending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                      {isSending ? 'Enviando...' : 'Enviar Mensaje'}
                     </Button>
                   </form>
                 </Form>
