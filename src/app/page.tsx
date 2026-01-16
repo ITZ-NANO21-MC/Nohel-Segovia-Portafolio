@@ -4,7 +4,6 @@ import AboutSection from "@/components/sections/AboutSection";
 import SkillsSection from "@/components/sections/SkillsSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import MetricsSection from "@/components/sections/MetricsSection";
-import BlogSection from "@/components/sections/BlogSection";
 import ContactSection from "@/components/sections/ContactSection";
 import Footer from "@/components/layout/Footer";
 import FloatingNav from "@/components/layout/FloatingNav";
@@ -19,7 +18,6 @@ export default function Home() {
         <SkillsSection />
         <ProjectsSection />
         <MetricsSection />
-        <BlogSection />
         <ContactSection />
       </main>
       <FloatingNav />

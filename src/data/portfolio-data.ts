@@ -8,7 +8,6 @@ export const navItems = [
   { title: 'Habilidades', href: '#skills' },
   { title: 'Proyectos', href: '#projects' },
   { title: 'Métricas', href: '#metrics' },
-  { title: 'Blog', href: '#blog' },
   { title: 'Contacto', href: '#contact' },
 ];
 
