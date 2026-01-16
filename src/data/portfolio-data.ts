@@ -1,7 +1,8 @@
 import type { Project, SkillCategory, TimelineEvent, BlogArticle, StatCard } from '@/types';
 import { BrainCircuit, Code, FlaskConical, GitBranch, Github, Linkedin, Monitor, Zap, Database, Cloud, Container } from 'lucide-react';
 import React from 'react';
-import { SiTensorflow, SiScikitlearn, SiPandas, SiReact, SiNextdotjs, SiNodedotjs, SiTailwindcss, SiVercel, SiMysql, SiMongodb } from 'react-icons/si';
+import { SiTensorflow, SiScikitlearn, SiPandas, SiReact, SiNextdotjs, SiNodedotjs, SiTailwindcss, SiVercel, SiMysql, SiMongodb, SiHtml5, SiCss3, SiBootstrap, SiPython, SiGooglegemini, SiNumpy, SiJavascript } from 'react-icons/si';
+import {FaCode, FaHighlighter} from 'react-icons/fa'
 
 export const navItems = [
   { title: 'Sobre Mí', href: '#about' },
@@ -29,7 +30,11 @@ export const projects: Project[] = [
     stack: [
       { name: 'TensorFlow', icon: React.createElement(SiTensorflow) },
       { name: 'Flask', icon: React.createElement(FlaskConical) },
-      { name: 'React', icon: React.createElement(SiReact) },
+      { name: 'MySQL', icon: React.createElement(SiMysql) },
+      { name: 'Html', icon: React.createElement(SiHtml5) },
+      { name: 'CSS', icon: React.createElement(SiCss3)},
+      {name: 'JavaScript', icon: React.createElement(SiJavascript)},
+      {name: 'Bootstrap', icon: React.createElement(SiBootstrap)},
       { name: 'Docker', icon: React.createElement(Container) },
     ],
     metrics: [
@@ -46,13 +51,14 @@ export const projects: Project[] = [
     title: 'NanoEditor v3.2',
     description: 'Editor de código minimalista con sugerencias de código impulsadas por IA.',
     problem: 'Los editores de código modernos pueden ser pesados y complejos. Los desarrolladores necesitan una herramienta ligera que acelere la codificación con asistencia inteligente.',
-    solution: 'Creamos un editor de código basado en web con una interfaz limpia y funciones esenciales, integrado con un modelo de lenguaje (LLM) que proporciona sugerencias de código contextuales y autocompletado avanzado.',
+    solution: 'Creamos un editor de código de escritorio, que contiene una interfaz limpia y funciones esenciales, integrado con un modelo de lenguaje (Gemini) que proporciona sugerencias de código contextuales y autocompletado.',
     status: 'In Development',
     stack: [
-      { name: 'Next.js', icon: React.createElement(SiNextdotjs) },
-      { name: 'Genkit AI', icon: React.createElement(BrainCircuit) },
-      { name: 'TypeScript', icon: React.createElement(Code) },
-      { name: 'Vercel', icon: React.createElement(SiVercel) },
+      { name: 'Python', icon: React.createElement(SiPython)},
+      { name: 'Pygments', icon: React.createElement(FaHighlighter) },
+      { name: 'Customtkinter', icon: React.createElement(Monitor) },
+      { name: 'Jedi', icon: React.createElement(FaCode) },
+      { name: 'Google Gen AI SDK', icon: React.createElement(SiGooglegemini ) },
     ],
     metrics: [
       { label: 'Latencia de Sugerencia', value: '~300ms' },
@@ -71,9 +77,9 @@ export const projects: Project[] = [
     solution: 'Un chatbot que utiliza NLP (Procesamiento de Lenguaje Natural) para entender y responder preguntas frecuentes, escalar conversaciones complejas a agentes humanos y realizar tareas como seguimiento de pedidos.',
     status: 'Production Ready',
     stack: [
-      { name: 'Node.js', icon: React.createElement(SiNodedotjs) },
-      { name: 'Dialogflow', icon: React.createElement(BrainCircuit) },
-      { name: 'MongoDB', icon: React.createElement(SiMongodb) },
+      { name: 'Python', icon: React.createElement(SiPython) },
+      { name: 'Scikit-learn', icon: React.createElement(SiScikitlearn) },
+      { name: 'Numpy', icon: React.createElement(SiNumpy) },
       { name: 'Git', icon: React.createElement(GitBranch) },
     ],
     metrics: [
@@ -93,8 +99,9 @@ export const projects: Project[] = [
     solution: 'Una interfaz de usuario simple y rápida que consume la API de The Movie Database (TMDb) para permitir a los usuarios buscar películas, ver detalles y descubrir títulos populares o recomendados.',
     status: 'Archived',
     stack: [
-      { name: 'React', icon: React.createElement(SiReact) },
-      { name: 'Tailwind CSS', icon: React.createElement(SiTailwindcss) },
+      { name: 'Html', icon: React.createElement(SiHtml5) },
+      { name: 'CSS', icon: React.createElement(SiCss3) },
+      { name: 'JavaScript', icon: React.createElement(SiJavascript) },
       { name: 'REST API', icon: React.createElement(Code) },
       { name: 'GitHub Pages', icon: React.createElement(Github) },
     ],
@@ -113,28 +120,28 @@ export const skillCategories: SkillCategory[] = [
   {
     title: 'Machine Learning',
     skills: [
-      { name: 'TensorFlow', level: 'Intermedio', progress: 65, icon: React.createElement(SiTensorflow) },
+      { name: 'TensorFlow', level: 'Intermedio', progress: 55, icon: React.createElement(SiTensorflow) },
       { name: 'Scikit-learn', level: 'Intermedio', progress: 65, icon: React.createElement(SiScikitlearn) },
       { name: 'Pandas', level: 'Avanzado', progress: 90, icon: React.createElement(SiPandas) },
-      { name: 'NLP', level: 'Intermedio', progress: 65, icon: React.createElement(BrainCircuit) },
+      { name: 'NLP', level: 'Intermedio', progress: 50, icon: React.createElement(BrainCircuit) },
     ],
   },
   {
     title: 'Backend',
     skills: [
       { name: 'Python (Flask)', level: 'Avanzado', progress: 95, icon: React.createElement(FlaskConical) },
-      { name: 'Node.js', level: 'Intermedio', progress: 50, icon: React.createElement(SiNodedotjs) },
+      { name: 'Node.js', level: 'Intermedio', progress: 45, icon: React.createElement(SiNodedotjs) },
       { name: 'MySQL', level: 'Intermedio', progress: 60, icon: React.createElement(SiMysql) },
-      { name: 'MongoDB', level: 'Intermedio', progress: 50, icon: React.createElement(SiMongodb) },
+      { name: 'MongoDB', level: 'Intermedio', progress: 45, icon: React.createElement(SiMongodb) },
     ],
   },
   {
     title: 'Frontend',
     skills: [
-      { name: 'React', level: 'Intermedio', progress: 55, icon: React.createElement(SiReact) },
+      { name: 'React', level: 'Intermedio', progress: 50, icon: React.createElement(SiReact) },
       { name: 'Next.js', level: 'Intermedio', progress: 40, icon: React.createElement(SiNextdotjs) },
-      { name: 'TypeScript', level: 'Intermedio', progress: 35, icon: React.createElement(Code) },
-      { name: 'Tailwind CSS', level: 'Básico', progress: 25, icon: React.createElement(SiTailwindcss) },
+      { name: 'TypeScript', level: 'Básico', progress: 35, icon: React.createElement(Code) },
+      { name: 'Tailwind CSS', level: 'Básico', progress: 20, icon: React.createElement(SiTailwindcss) },
     ],
   },
   {
@@ -142,8 +149,8 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       { name: 'Docker', level: 'Avanzado', progress: 80, icon: React.createElement(Container) },
       { name: 'Git & GitHub', level: 'Avanzado', progress: 95, icon: React.createElement(GitBranch) },
-      { name: 'Vercel', level: 'Básico', progress: 35, icon: React.createElement(SiVercel) },
-      { name: 'Cloud', level: 'Básico', progress: 30, icon: React.createElement(Cloud) },
+      { name: 'Vercel', level: 'Básico', progress: 25, icon: React.createElement(SiVercel) },
+      { name: 'Cloud', level: 'Básico', progress: 20, icon: React.createElement(Cloud) },
     ],
   },
 ];
