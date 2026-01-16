@@ -14,7 +14,6 @@ import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent } from '@/components/ui/card';
 import { Loader2, Mail, MapPin, Phone } from 'lucide-react';
 import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { motion } from 'framer-motion';
 
 const formSchema = z.object({
@@ -29,7 +28,14 @@ type FormValues = z.infer<typeof formSchema>;
 export default function ContactSection() {
   const { toast } = useToast();
   const [isSending, setIsSending] = useState(false);
-  const mapImage = PlaceHolderImages.find(p => p.id === 'map-location');
+  const apiKey = process.env.NEXT_PUBLIC_GEOAPIFY_API_KEY;
+  const lat = 11.404;
+  const lon = -69.673;
+  const zoom = 10;
+  const mapStyle = 'osm-carto';
+  const markerColor = '2563eb'; // Hex for primary color
+  
+  const mapUrl = `https://maps.geoapify.com/v1/staticmap?style=${mapStyle}&width=800&height=450&center=lonlat:${lon},${lat}&zoom=${zoom}&marker=lonlat:${lon},${lat};color:%23${markerColor}&apiKey=${apiKey}`;
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -194,34 +200,21 @@ export default function ContactSection() {
             <div className="space-y-4">
                 <h3 className="text-xl font-bold">Ubicación</h3>
                 <div className="aspect-video w-full overflow-hidden rounded-lg border">
-                  {mapImage ? (
+                  {apiKey && apiKey !== 'YOUR_GEOAPIFY_API_KEY' ? (
                     <Image 
-                      src={mapImage.imageUrl} 
-                      alt="Mapa de ubicación"
+                      src={mapUrl} 
+                      alt="Mapa de ubicación en Falcón, Venezuela"
                       width={800}
-                      height={400}
+                      height={450}
                       className="w-full h-full object-cover"
-                      data-ai-hint={mapImage.imageHint}
                     />
                   ) : (
-                    <div className="w-full h-full bg-muted flex items-center justify-center">
-                        <p className="text-muted-foreground">Cargando mapa...</p>
+                    <div className="w-full h-full bg-muted flex items-center justify-center p-4 text-center">
+                        <p className="text-muted-foreground text-sm">
+                          Para mostrar el mapa, por favor, obtén una API Key gratuita en <a href="https://www.geoapify.com/" target="_blank" rel="noopener noreferrer" className="text-primary underline">Geoapify</a> y añádela como <code className="font-mono bg-primary/10 px-1 py-0.5 rounded">NEXT_PUBLIC_GEOAPIFY_API_KEY</code> en tu archivo <code className="font-mono bg-primary/10 px-1 py-0.5 rounded">.env</code>.
+                        </p>
                     </div>
                   )}
-                  {/*
-                    Para un mapa interactivo, reemplaza la imagen con un componente de mapa.
-                    Ejemplo con @vis.gl/react-google-maps:
-                    
-                    <APIProvider apiKey={"YOUR_GOOGLE_MAPS_API_KEY"}>
-                        <Map
-                            defaultCenter={{ lat: 11.404, lng: -69.673 }}
-                            defaultZoom={10}
-                            mapId={"YOUR_MAP_ID"}
-                         >
-                             <Marker position={{ lat: 11.404, lng: -69.673 }} />
-                         </Map>
-                    </APIProvider>
-                  */}
                 </div>
             </div>
           </motion.div>
