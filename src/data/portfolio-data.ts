@@ -1,7 +1,7 @@
 import type { Project, SkillCategory, TimelineEvent, BlogArticle, StatCard } from '@/types';
 import { BrainCircuit, Code, FlaskConical, GitBranch, Github, Linkedin, Monitor, Zap, Database, Cloud, Container } from 'lucide-react';
 import React from 'react';
-import { SiTensorflow, SiScikitlearn, SiPandas, SiReact, SiNextdotjs, SiNodedotjs, SiTailwindcss, SiVercel, SiPostgresql, SiMongodb } from 'react-icons/si';
+import { SiTensorflow, SiScikitlearn, SiPandas, SiReact, SiNextdotjs, SiNodedotjs, SiTailwindcss, SiVercel, SiMysql, SiMongodb } from 'react-icons/si';
 
 export const navItems = [
   { title: 'Sobre Mí', href: '#about' },
@@ -114,37 +114,37 @@ export const skillCategories: SkillCategory[] = [
   {
     title: 'Machine Learning',
     skills: [
-      { name: 'TensorFlow', level: 'Avanzado', progress: 90, icon: React.createElement(SiTensorflow) },
-      { name: 'Scikit-learn', level: 'Avanzado', progress: 95, icon: React.createElement(SiScikitlearn) },
+      { name: 'TensorFlow', level: 'Intermedio', progress: 65, icon: React.createElement(SiTensorflow) },
+      { name: 'Scikit-learn', level: 'Intermedio', progress: 65, icon: React.createElement(SiScikitlearn) },
       { name: 'Pandas', level: 'Avanzado', progress: 90, icon: React.createElement(SiPandas) },
-      { name: 'NLP', level: 'Intermedio', progress: 75, icon: React.createElement(BrainCircuit) },
+      { name: 'NLP', level: 'Intermedio', progress: 65, icon: React.createElement(BrainCircuit) },
     ],
   },
   {
     title: 'Backend',
     skills: [
       { name: 'Python (Flask)', level: 'Avanzado', progress: 95, icon: React.createElement(FlaskConical) },
-      { name: 'Node.js', level: 'Intermedio', progress: 80, icon: React.createElement(SiNodedotjs) },
-      { name: 'PostgreSQL', level: 'Intermedio', progress: 70, icon: React.createElement(SiPostgresql) },
-      { name: 'MongoDB', level: 'Intermedio', progress: 75, icon: React.createElement(SiMongodb) },
+      { name: 'Node.js', level: 'Intermedio', progress: 50, icon: React.createElement(SiNodedotjs) },
+      { name: 'MySQL', level: 'Intermedio', progress: 60, icon: React.createElement(SiMysql) },
+      { name: 'MongoDB', level: 'Intermedio', progress: 50, icon: React.createElement(SiMongodb) },
     ],
   },
   {
     title: 'Frontend',
     skills: [
-      { name: 'React', level: 'Avanzado', progress: 90, icon: React.createElement(SiReact) },
-      { name: 'Next.js', level: 'Avanzado', progress: 85, icon: React.createElement(SiNextdotjs) },
-      { name: 'TypeScript', level: 'Avanzado', progress: 90, icon: React.createElement(Code) },
-      { name: 'Tailwind CSS', level: 'Avanzado', progress: 95, icon: React.createElement(SiTailwindcss) },
+      { name: 'React', level: 'Intermedio', progress: 55, icon: React.createElement(SiReact) },
+      { name: 'Next.js', level: 'Intermedio', progress: 40, icon: React.createElement(SiNextdotjs) },
+      { name: 'TypeScript', level: 'Intermedio', progress: 35, icon: React.createElement(Code) },
+      { name: 'Tailwind CSS', level: 'Básico', progress: 25, icon: React.createElement(SiTailwindcss) },
     ],
   },
   {
     title: 'DevOps & Herramientas',
     skills: [
-      { name: 'Docker', level: 'Intermedio', progress: 80, icon: React.createElement(Container) },
+      { name: 'Docker', level: 'Avanzado', progress: 80, icon: React.createElement(Container) },
       { name: 'Git & GitHub', level: 'Avanzado', progress: 95, icon: React.createElement(GitBranch) },
-      { name: 'Vercel', level: 'Avanzado', progress: 90, icon: React.createElement(SiVercel) },
-      { name: 'Cloud', level: 'Básico', progress: 60, icon: React.createElement(Cloud) },
+      { name: 'Vercel', level: 'Básico', progress: 35, icon: React.createElement(SiVercel) },
+      { name: 'Cloud', level: 'Básico', progress: 30, icon: React.createElement(Cloud) },
     ],
   },
 ];
@@ -195,7 +195,7 @@ export const blogArticles: BlogArticle[] = [
 ];
 
 export const socialLinks = {
-  whatsapp: "https://wa.me/1234567890", // Replace with actual number
-  github: "https://github.com/nohel-segovia", // Replace with actual profile
-  linkedin: "https://linkedin.com/in/nohel-segovia", // Replace with actual profile
+  whatsapp: "https://wa.me/+584246684134", 
+  github: "https://github.com/ITZ-NANO21-MC", 
+  linkedin: "https://linkedin.com/in/nohel-gonzalez-96aa02339", 
 };

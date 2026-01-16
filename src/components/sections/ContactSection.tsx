@@ -159,11 +159,11 @@ export default function ContactSection() {
                 <div className="space-y-3 text-muted-foreground">
                     <div className="flex items-center gap-3">
                         <Mail className="h-5 w-5 text-primary" />
-                        <span>nohel.segovia.dev@email.com</span>
+                        <span>nohelsegovia21@gmail.com</span>
                     </div>
                     <div className="flex items-center gap-3">
                         <Phone className="h-5 w-5 text-primary" />
-                        <span>+58 123 456 7890</span>
+                        <span>+58 424 668 4134</span>
                     </div>
                     <div className="flex items-center gap-3">
                         <MapPin className="h-5 w-5 text-primary" />
