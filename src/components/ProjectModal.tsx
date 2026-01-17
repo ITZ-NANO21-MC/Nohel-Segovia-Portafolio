@@ -65,10 +65,6 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
                   <div>
                     <h3 className="font-bold text-lg mb-2">Característica de IA</h3>
                     <p className="text-sm text-muted-foreground mb-4">Prueba las sugerencias de código impulsadas por IA. Describe una tarea y obtén una solución generada por IA.</p>
-                    <Button onClick={() => setShowCodeSuggestion(true)}>
-                      <Code className="mr-2 h-4 w-4" />
-                      Probar Sugerencia de Código
-                    </Button>
                   </div>
                 )}
             </div>
