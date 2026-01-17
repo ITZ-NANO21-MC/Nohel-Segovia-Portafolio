@@ -123,23 +123,23 @@ export const skillCategories: SkillCategory[] = [
       { name: 'TensorFlow', level: 'Intermedio', progress: 55, icon: React.createElement(SiTensorflow) },
       { name: 'Scikit-learn', level: 'Intermedio', progress: 65, icon: React.createElement(SiScikitlearn) },
       { name: 'Pandas', level: 'Avanzado', progress: 90, icon: React.createElement(SiPandas) },
-      { name: 'NLP', level: 'Intermedio', progress: 50, icon: React.createElement(BrainCircuit) },
+      { name: 'NLP', level: 'Básico', progress: 30, icon: React.createElement(BrainCircuit) },
     ],
   },
   {
     title: 'Backend',
     skills: [
       { name: 'Python (Flask)', level: 'Avanzado', progress: 95, icon: React.createElement(FlaskConical) },
-      { name: 'Node.js', level: 'Intermedio', progress: 45, icon: React.createElement(SiNodedotjs) },
+      { name: 'Node.js', level: 'Básico', progress: 35, icon: React.createElement(SiNodedotjs) },
       { name: 'MySQL', level: 'Intermedio', progress: 60, icon: React.createElement(SiMysql) },
-      { name: 'MongoDB', level: 'Intermedio', progress: 45, icon: React.createElement(SiMongodb) },
+      { name: 'MongoDB', level: 'Básico', progress: 35, icon: React.createElement(SiMongodb) },
     ],
   },
   {
     title: 'Frontend',
     skills: [
       { name: 'React', level: 'Intermedio', progress: 50, icon: React.createElement(SiReact) },
-      { name: 'Next.js', level: 'Intermedio', progress: 40, icon: React.createElement(SiNextdotjs) },
+      { name: 'Next.js', level: 'Básico', progress: 30, icon: React.createElement(SiNextdotjs) },
       { name: 'TypeScript', level: 'Básico', progress: 35, icon: React.createElement(Code) },
       { name: 'Tailwind CSS', level: 'Básico', progress: 20, icon: React.createElement(SiTailwindcss) },
     ],
