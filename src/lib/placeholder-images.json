@@ -2,57 +2,51 @@
   "placeholderImages": [
     {
       "id": "profile-picture",
-      "description": "A professional headshot of Nohel Segovia",
-      "imageUrl": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjgzOTg3NzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "professional portrait"
+      "description": "A professional headshot of Nohel Segovia.",
+      "imageUrl": "https://images.unsplash.com/photo-1607073806996-6583a2833865?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwcm9maWxlJTIwcGVyc29ufGVufDB8fHx8MTc2ODg2OTE4NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "profile person"
     },
     {
       "id": "tb-detector-ai",
-      "description": "An abstract visualization of AI analyzing medical scans.",
+      "description": "A chest X-ray image being analyzed by an AI.",
       "imageUrl": "/TB-detection-system.png",
-      "imageHint": "medical scan"
+      "imageHint": "medical xray"
     },
     {
       "id": "nano-editor",
-      "description": "A sleek interface of a modern code editor.",
+      "description": "A minimalist code editor interface with code suggestions.",
       "imageUrl": "/Nano-editor.png",
       "imageHint": "code editor"
     },
     {
       "id": "whatsapp-chatbot",
-      "description": "A smartphone screen showing a chat conversation with a bot.",
-      "imageUrl": "https://images.unsplash.com/photo-1723987135977-ae935608939e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjaGF0JTIwaW50ZXJmYWNlfGVufDB8fHx8MTc2ODQ5MDM0OHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "chat interface"
+      "description": "A smartphone screen showing a WhatsApp chatbot conversation.",
+      "imageUrl": "https://images.unsplash.com/photo-1751448582395-27fc57293f1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaGF0Ym90JTIwY29udmVyc2F0aW9ufGVufDB8fHx8MTc2ODk1MjkwMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "chatbot conversation"
     },
     {
       "id": "movie-finder",
-      "description": "A collage of movie posters.",
+      "description": "A grid of movie posters on a website.",
       "imageUrl": "/MovieFinder.png",
       "imageHint": "movie posters"
     },
     {
       "id": "blog-ml-precision",
-      "description": "A graph showing a model's accuracy curve reaching 99%.",
-      "imageUrl": "https://images.unsplash.com/photo-1586448317606-cb1ec00298fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhY2N1cmFjeSUyMGdyYXBofGVufDB8fHx8MTc2ODQ5MzE3N3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "accuracy graph"
+      "description": "An abstract visualization of a neural network.",
+      "imageUrl": "https://images.unsplash.com/photo-1597733336794-12d05021d510?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxuZXVyYWwlMjBuZXR3b3JrfGVufDB8fHx8MTc2ODk0NzI4Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "neural network"
     },
     {
       "id": "blog-python-arch",
-      "description": "A diagram of a modular software architecture.",
-      "imageUrl": "https://images.unsplash.com/photo-1595843102703-96f6a6580cd1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxhcmNoaXRlY3R1cmUlMjBkaWFncmFtfGVufDB8fHx8MTc2ODQ5MzE3N3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "architecture diagram"
+      "description": "A diagram showing a modular software architecture.",
+      "imageUrl": "https://images.unsplash.com/photo-1753715613388-7e03410b1dce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzb2Z0d2FyZSUyMGFyY2hpdGVjdHVyZXxlbnwwfHx8fDE3Njg5NTI5MDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "software architecture"
     },
     {
       "id": "blog-flask-docker",
-      "description": "Docker and Flask logos side by side.",
-      "imageUrl": "https://images.unsplash.com/photo-1718210719980-1f159546aeb2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxEb2NrZXIlMjBGbGFza3xlbnwwfHx8fDE3Njg0OTMxNzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "Docker Flask"
-    },
-    {
-      "id": "map-location",
-      "description": "A map showing the location of Falcon, Venezuela.",
-      "imageUrl": "https://images.unsplash.com/photo-1723391807622-c1fe37f64d1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxWZW5lenVlbGElMjBtYXB8ZW58MHx8fHwxNzY4NDkzMTc2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "Venezuela map"
+      "description": "Docker and Flask logos side-by-side.",
+      "imageUrl": "https://images.unsplash.com/photo-1645633092556-368798e09857?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxkb2NrZXIlMjBmbGFza3xlbnwwfHx8fDE3Njg5NTI5MDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "docker flask"
     }
   ]
 }
