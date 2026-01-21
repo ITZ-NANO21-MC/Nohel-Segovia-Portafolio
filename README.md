@@ -44,9 +44,8 @@ Asegúrate de tener instalado [Node.js](https://nodejs.org/) (versión 20.x o su
 Clona el repositorio e instala las dependencias del proyecto:
 
 ```bash
-# Si aún no has clonado el proyecto:
-# git clone <URL_DEL_REPOSITORIO>
-# cd <NOMBRE_DEL_PROYECTO>
+git clone https://github.com/ITZ-NANO21-MC/Nohel-Segovia-Portafolio.git
+cd Nohel-Segovia-Portafolio
 
 npm install
 ```
