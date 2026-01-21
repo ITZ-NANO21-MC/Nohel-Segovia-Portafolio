@@ -66,7 +66,7 @@ export const projects: Project[] = [
       { label: 'Satisfacción Usuario', value: '95%' },
     ],
     demoUrl: '#',
-    codeUrl: '#',
+    codeUrl: 'https://github.com/ITZ-NANO21-MC/Nano-Editor',
     image: { id: 'nano-editor' },
   },
   {
@@ -113,6 +113,7 @@ export const projects: Project[] = [
       { label: 'Tasa de Interacción', value: '15%' },
       { label: 'Precisión de Recomendación', value: '90%' },
     ],
+    demoUrl: '#',
     codeUrl: '#',
     image: { id: 'techanalitica' },
   },
@@ -135,7 +136,7 @@ export const projects: Project[] = [
       { label: 'Reducción de Costos', value: '50%' },
     ],
     demoUrl: '#',
-    codeUrl: '#',
+    codeUrl: 'https://github.com/ITZ-NANO21-MC/Chatbot_With_ML',
     image: { id: 'whatsapp-chatbot' },
   },
   {
@@ -158,7 +159,7 @@ export const projects: Project[] = [
       { label: 'Tasa de Rebote', value: '25%' },
     ],
     demoUrl: '#',
-    codeUrl: '#',
+    codeUrl: 'https://github.com/ITZ-NANO21-MC/MovieFinder-Buscador-de-Pel-culas-con-OMDB-API',
     image: { id: 'movie-finder' },
   },
 ];
@@ -232,14 +233,14 @@ export const blogArticles: BlogArticle[] = [
     link: '#',
   },
   {
-    id: 'python-arch',
+    id: 'blog-python-arch',
     title: 'Arquitectura modular en proyectos Python con Flask',
     description: 'Explorando patrones como Blueprints y la inyección de dependencias para crear aplicaciones Flask escalables y mantenibles.',
     imageUrlId: 'blog-python-arch',
     link: '#',
   },
   {
-    id: 'flask-docker',
+    id: 'blog-flask-docker',
     title: 'Deploy de aplicaciones Flask con Docker y Nginx',
     description: 'Una guía paso a paso para contenedorizar una aplicación Flask y desplegarla en producción de forma eficiente y segura.',
     imageUrlId: 'blog-flask-docker',
