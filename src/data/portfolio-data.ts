@@ -1,5 +1,5 @@
 import type { Project, SkillCategory, TimelineEvent, BlogArticle, StatCard } from '@/types';
-import { BrainCircuit, Code, FlaskConical, GitBranch, Github, Linkedin, Monitor, Zap, Database, Cloud, Container } from 'lucide-react';
+import { BrainCircuit, Code, FlaskConical, GitBranch, Github, Linkedin, Mail, Monitor, Zap, Database, Cloud, Container } from 'lucide-react';
 import React from 'react';
 import { SiTensorflow, SiScikitlearn, SiPandas, SiReact, SiNextdotjs, SiNodedotjs, SiTailwindcss, SiVercel, SiMysql, SiMongodb, SiHtml5, SiCss3, SiBootstrap, SiPython, SiGooglegemini, SiNumpy, SiJavascript, SiTypescript } from 'react-icons/si';
 import {FaCode, FaHighlighter} from 'react-icons/fa'
@@ -91,6 +91,30 @@ export const projects: Project[] = [
     demoUrl: '#',
     codeUrl: 'https://github.com/ITZ-NANO21-MC/TechFix-Web',
     image: { id: 'techfix-solutions' },
+  },
+  {
+    id: 'techanalitica',
+    title: 'TechAnalítica',
+    description: 'Sitio web con análisis y guías de compra de tecnología, enfocado en AI PCs, tablets y productividad.',
+    problem: 'Los consumidores necesitan información clara y detallada para tomar decisiones de compra informadas sobre productos tecnológicos complejos como AI PCs.',
+    solution: 'Una plataforma centralizada que ofrece análisis exhaustivos, comparativas y guías de compra, ayudando a los usuarios a elegir la mejor tecnología para sus necesidades.',
+    status: 'In Development',
+    stack: [
+      { name: 'Next.js', icon: React.createElement(SiNextdotjs) },
+      { name: 'TypeScript', icon: React.createElement(SiTypescript) },
+      { name: 'Tailwind CSS', icon: React.createElement(SiTailwindcss) },
+      { name: 'Shadcn/UI', icon: React.createElement(Monitor) },
+      { name: 'Genkit', icon: React.createElement(SiGooglegemini) },
+      { name: 'React Hook Form', icon: React.createElement(FaCode) },
+      { name: 'EmailJS', icon: React.createElement(Mail) }
+    ],
+    metrics: [
+      { label: 'Reducción Tiempo de Decisión', value: '40%' },
+      { label: 'Tasa de Interacción', value: '15%' },
+      { label: 'Precisión de Recomendación', value: '90%' },
+    ],
+    codeUrl: '#',
+    image: { id: 'techanalitica' },
   },
   {
     id: 'whatsapp-chatbot',
