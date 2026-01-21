@@ -43,7 +43,7 @@ export const projects: Project[] = [
       { label: 'Disponibilidad', value: '99.9%' },
     ],
     demoUrl: '#',
-    codeUrl: '#',
+    codeUrl: '',
     image: { id: 'tb-detector-ai' },
   },
   {
