@@ -1,7 +1,7 @@
 import type { Project, SkillCategory, TimelineEvent, BlogArticle, StatCard } from '@/types';
 import { BrainCircuit, Code, FlaskConical, GitBranch, Github, Linkedin, Monitor, Zap, Database, Cloud, Container } from 'lucide-react';
 import React from 'react';
-import { SiTensorflow, SiScikitlearn, SiPandas, SiReact, SiNextdotjs, SiNodedotjs, SiTailwindcss, SiVercel, SiMysql, SiMongodb, SiHtml5, SiCss3, SiBootstrap, SiPython, SiGooglegemini, SiNumpy, SiJavascript } from 'react-icons/si';
+import { SiTensorflow, SiScikitlearn, SiPandas, SiReact, SiNextdotjs, SiNodedotjs, SiTailwindcss, SiVercel, SiMysql, SiMongodb, SiHtml5, SiCss3, SiBootstrap, SiPython, SiGooglegemini, SiNumpy, SiJavascript, SiTypescript } from 'react-icons/si';
 import {FaCode, FaHighlighter} from 'react-icons/fa'
 
 export const navItems = [
@@ -68,6 +68,29 @@ export const projects: Project[] = [
     demoUrl: '#',
     codeUrl: '#',
     image: { id: 'nano-editor' },
+  },
+  {
+    id: 'techfix-solutions',
+    title: 'TechFix Solutions - Landing Page',
+    description: 'Landing page moderna y profesional para una empresa de reparación de tecnología.',
+    problem: 'La empresa necesitaba una presencia en línea profesional y rápida para mostrar sus servicios, generar confianza y captar nuevos clientes de manera efectiva.',
+    solution: 'Se construyó una landing page con Next.js, totalmente responsiva y optimizada para el rendimiento. Presenta los servicios de forma clara, incluye testimonios de clientes y un formulario de contacto funcional para solicitar cotizaciones.',
+    status: 'Production Ready',
+    stack: [
+      { name: 'Next.js', icon: React.createElement(SiNextdotjs) },
+      { name: 'TypeScript', icon: React.createElement(SiTypescript) },
+      { name: 'Tailwind CSS', icon: React.createElement(SiTailwindcss) },
+      { name: 'Shadcn/UI', icon: React.createElement(Monitor) },
+      { name: 'React Hook Form', icon: React.createElement(FaCode) },
+    ],
+    metrics: [
+      { label: 'Tiempo de Carga (LCP)', value: '< 1.2s' },
+      { label: 'Aumento de Leads', value: '+25%' },
+      { label: 'Compatibilidad', value: '99.5%' },
+    ],
+    demoUrl: '#',
+    codeUrl: 'https://github.com/ITZ-NANO21-MC/TechFix-Web',
+    image: { id: 'techfix-solutions' },
   },
   {
     id: 'whatsapp-chatbot',
