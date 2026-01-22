@@ -1,6 +1,6 @@
 "use client"
 
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis, ResponsiveContainer, Scatter, ScatterChart, ZAxis, Tooltip as RechartsTooltip, Legend } from "recharts"
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis, ResponsiveContainer, Scatter, ScatterChart, ZAxis, Tooltip as RechartsTooltip, Legend, Cell } from "recharts"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 import { motion } from "framer-motion"
@@ -44,7 +44,7 @@ const chartConfigScatter = {
 }
 
 export default function MetricsSection() {
-  
+
   return (
     <section id="metrics" className="py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -84,10 +84,14 @@ export default function MetricsSection() {
                     <CartesianGrid />
                     <XAxis type="number" dataKey="Complejidad" name="Complejidad" unit="" />
                     <YAxis type="number" dataKey="Impacto" name="Impacto" unit="" />
-                    <ZAxis type="string" dataKey="project" name="Proyecto" />
-                    <RechartsTooltip cursor={{ strokeDasharray: '3 3' }} content={<ChartTooltipContent />} />
+                    <ZAxis type="category" dataKey="project" name="Proyecto" range={[100, 100]} />
+                    <RechartsTooltip cursor={{ strokeDasharray: '3 3' }} content={<ChartTooltipContent labelKey="project" />} />
                     <Legend />
-                    <Scatter name="Proyectos" data={projectPerformanceData} />
+                    <Scatter name="Proyectos" data={projectPerformanceData}>
+                      {projectPerformanceData.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={entry.fill} />
+                      ))}
+                    </Scatter>
                   </ScatterChart>
                 </ChartContainer>
               </CardContent>
@@ -106,20 +110,20 @@ export default function MetricsSection() {
                 <CardDescription>Frecuencia de uso de tecnologías clave en los proyectos destacados.</CardDescription>
               </CardHeader>
               <CardContent className="h-[300px] w-full">
-                  <ChartContainer config={chartConfigBar} className="h-full w-full">
-                    <BarChart data={stackUsageData} accessibilityLayer>
-                      <CartesianGrid vertical={false} />
-                      <XAxis
-                        dataKey="name"
-                        tickLine={false}
-                        tickMargin={10}
-                        axisLine={false}
-                      />
-                      <YAxis />
-                      <RechartsTooltip cursor={false} content={<ChartTooltipContent indicator="dot" />} />
-                      <Bar dataKey="Proyectos" radius={4} />
-                    </BarChart>
-                  </ChartContainer>
+                <ChartContainer config={chartConfigBar} className="h-full w-full">
+                  <BarChart data={stackUsageData} accessibilityLayer>
+                    <CartesianGrid vertical={false} />
+                    <XAxis
+                      dataKey="name"
+                      tickLine={false}
+                      tickMargin={10}
+                      axisLine={false}
+                    />
+                    <YAxis />
+                    <RechartsTooltip cursor={false} content={<ChartTooltipContent indicator="dot" />} />
+                    <Bar dataKey="Proyectos" radius={4} />
+                  </BarChart>
+                </ChartContainer>
               </CardContent>
             </Card>
           </motion.div>
