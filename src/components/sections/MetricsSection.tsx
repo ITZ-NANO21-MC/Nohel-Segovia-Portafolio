@@ -10,6 +10,8 @@ const projectPerformanceData = [
   { project: "TB-Detector", "Complejidad": 8, "Impacto": 9.5, fill: "hsl(var(--primary))" },
   { project: "NanoEditor", "Complejidad": 7, "Impacto": 8, fill: "hsl(var(--accent))" },
   { project: "Chatbot", "Complejidad": 6, "Impacto": 7.5, fill: "hsl(var(--secondary-foreground))" },
+  { project: "TechAnalítica", "Complejidad": 6, "Impacto": 7, fill: "hsl(var(--chart-2))" },
+  { project: "TechFix", "Complejidad": 4, "Impacto": 6, fill: "hsl(var(--chart-1))" },
   { project: "MovieFinder", "Complejidad": 3, "Impacto": 5, fill: "hsl(var(--muted-foreground))" },
 ]
 
