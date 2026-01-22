@@ -29,8 +29,8 @@ export default function ContactSection() {
   const { toast } = useToast();
   const [isSending, setIsSending] = useState(false);
   const apiKey = process.env.NEXT_PUBLIC_GEOAPIFY_API_KEY;
-  const lat = 11.404;
-  const lon = -69.692;
+  const lat = 11.404753969944798;
+  const lon = -69.6924407288366;
   const zoom = 10;
   const mapStyle = 'osm-carto';
   const markerColor = '2563eb'; // Hex for primary color
