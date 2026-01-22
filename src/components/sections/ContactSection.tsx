@@ -30,11 +30,11 @@ export default function ContactSection() {
   const [isSending, setIsSending] = useState(false);
   const apiKey = process.env.NEXT_PUBLIC_GEOAPIFY_API_KEY;
   const lat = 11.404;
-  const lon = -69.673;
+  const lon = -69.692;
   const zoom = 10;
   const mapStyle = 'osm-carto';
   const markerColor = '2563eb'; // Hex for primary color
-  
+
   const mapUrl = `https://maps.geoapify.com/v1/staticmap?style=${mapStyle}&width=800&height=450&center=lonlat:${lon},${lat}&zoom=${zoom}&marker=lonlat:${lon},${lat};color:%23${markerColor}&apiKey=${apiKey}`;
 
   const form = useForm<FormValues>({
@@ -56,7 +56,7 @@ export default function ContactSection() {
       const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
 
       await emailjs.send(serviceId, templateId, data, publicKey);
-      
+
       toast({
         title: '¡Formulario Enviado!',
         description: 'Gracias por tu mensaje. Me pondré en contacto contigo pronto.',
@@ -88,7 +88,7 @@ export default function ContactSection() {
             ¿Tienes una idea, una oportunidad de trabajo o simplemente quieres saludar? No dudes en escribirme.
           </p>
         </motion.div>
-        
+
         <div className="grid lg:grid-cols-2 gap-12">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -171,7 +171,7 @@ export default function ContactSection() {
               </CardContent>
             </Card>
           </motion.div>
-          
+
           <motion.div
             className="space-y-8"
             initial={{ opacity: 0, x: 20 }}
@@ -180,42 +180,42 @@ export default function ContactSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="space-y-4">
-                <h3 className="text-xl font-bold">Información de Contacto</h3>
-                <div className="space-y-3 text-muted-foreground">
-                    <div className="flex items-center gap-3">
-                        <Mail className="h-5 w-5 text-primary" />
-                        <span>nohelsegovia21@gmail.com</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                        <Phone className="h-5 w-5 text-primary" />
-                        <span>+58 424 668 4134</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                        <MapPin className="h-5 w-5 text-primary" />
-                        <span>Falcón, Venezuela</span>
-                    </div>
+              <h3 className="text-xl font-bold">Información de Contacto</h3>
+              <div className="space-y-3 text-muted-foreground">
+                <div className="flex items-center gap-3">
+                  <Mail className="h-5 w-5 text-primary" />
+                  <span>nohelsegovia21@gmail.com</span>
                 </div>
+                <div className="flex items-center gap-3">
+                  <Phone className="h-5 w-5 text-primary" />
+                  <span>+58 424 668 4134</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <MapPin className="h-5 w-5 text-primary" />
+                  <span>Falcón, Venezuela</span>
+                </div>
+              </div>
             </div>
-            
+
             <div className="space-y-4">
-                <h3 className="text-xl font-bold">Ubicación</h3>
-                <div className="aspect-video w-full overflow-hidden rounded-lg border">
-                  {apiKey && apiKey !== 'YOUR_GEOAPIFY_API_KEY' ? (
-                    <Image 
-                      src={mapUrl} 
-                      alt="Mapa de ubicación en Falcón, Venezuela"
-                      width={800}
-                      height={450}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <div className="w-full h-full bg-muted flex items-center justify-center p-4 text-center">
-                        <p className="text-muted-foreground text-sm">
-                          Para mostrar el mapa, por favor, obtén una API Key gratuita en <a href="https://www.geoapify.com/" target="_blank" rel="noopener noreferrer" className="text-primary underline">Geoapify</a> y añádela como <code className="font-mono bg-primary/10 px-1 py-0.5 rounded">NEXT_PUBLIC_GEOAPIFY_API_KEY</code> en tu archivo <code className="font-mono bg-primary/10 px-1 py-0.5 rounded">.env</code>.
-                        </p>
-                    </div>
-                  )}
-                </div>
+              <h3 className="text-xl font-bold">Ubicación</h3>
+              <div className="aspect-video w-full overflow-hidden rounded-lg border">
+                {apiKey && apiKey !== 'YOUR_GEOAPIFY_API_KEY' ? (
+                  <Image
+                    src={mapUrl}
+                    alt="Mapa de ubicación en Falcón, Venezuela"
+                    width={800}
+                    height={450}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-muted flex items-center justify-center p-4 text-center">
+                    <p className="text-muted-foreground text-sm">
+                      Para mostrar el mapa, por favor, obtén una API Key gratuita en <a href="https://www.geoapify.com/" target="_blank" rel="noopener noreferrer" className="text-primary underline">Geoapify</a> y añádela como <code className="font-mono bg-primary/10 px-1 py-0.5 rounded">NEXT_PUBLIC_GEOAPIFY_API_KEY</code> en tu archivo <code className="font-mono bg-primary/10 px-1 py-0.5 rounded">.env</code>.
+                    </p>
+                  </div>
+                )}
+              </div>
             </div>
           </motion.div>
         </div>
