@@ -2,7 +2,7 @@ import type { Project, SkillCategory, TimelineEvent, BlogArticle, StatCard } fro
 import { BrainCircuit, Code, FlaskConical, GitBranch, Github, Linkedin, Mail, Monitor, Zap, Database, Cloud, Container } from 'lucide-react';
 import React from 'react';
 import { SiTensorflow, SiScikitlearn, SiPandas, SiReact, SiNextdotjs, SiNodedotjs, SiTailwindcss, SiVercel, SiMysql, SiMongodb, SiHtml5, SiCss3, SiBootstrap, SiPython, SiGooglegemini, SiNumpy, SiJavascript, SiTypescript } from 'react-icons/si';
-import {FaCode, FaHighlighter} from 'react-icons/fa'
+import { FaCode, FaHighlighter } from 'react-icons/fa'
 
 export const navItems = [
   { title: 'Sobre Mí', href: '#about' },
@@ -32,9 +32,9 @@ export const projects: Project[] = [
       { name: 'Flask', icon: React.createElement(FlaskConical) },
       { name: 'MySQL', icon: React.createElement(SiMysql) },
       { name: 'Html', icon: React.createElement(SiHtml5) },
-      { name: 'CSS', icon: React.createElement(SiCss3)},
-      {name: 'JavaScript', icon: React.createElement(SiJavascript)},
-      {name: 'Bootstrap', icon: React.createElement(SiBootstrap)},
+      { name: 'CSS', icon: React.createElement(SiCss3) },
+      { name: 'JavaScript', icon: React.createElement(SiJavascript) },
+      { name: 'Bootstrap', icon: React.createElement(SiBootstrap) },
       { name: 'Docker', icon: React.createElement(Container) },
     ],
     metrics: [
@@ -43,7 +43,7 @@ export const projects: Project[] = [
       { label: 'Disponibilidad', value: '99.9%' },
     ],
     demoUrl: '#',
-    codeUrl: '',
+    codeUrl: 'https://github.com/ITZ-NANO21-MC/TB-detection-system',
     image: { id: 'tb-detector-ai' },
   },
   {
@@ -54,11 +54,11 @@ export const projects: Project[] = [
     solution: 'Creamos un editor de código de escritorio, que contiene una interfaz limpia y funciones esenciales, integrado con un modelo de lenguaje (Gemini) que proporciona sugerencias de código contextuales y autocompletado.',
     status: 'In Development',
     stack: [
-      { name: 'Python', icon: React.createElement(SiPython)},
+      { name: 'Python', icon: React.createElement(SiPython) },
       { name: 'Pygments', icon: React.createElement(FaHighlighter) },
       { name: 'Customtkinter', icon: React.createElement(Monitor) },
       { name: 'Jedi', icon: React.createElement(FaCode) },
-      { name: 'Google Gen AI SDK', icon: React.createElement(SiGooglegemini ) },
+      { name: 'Google Gen AI SDK', icon: React.createElement(SiGooglegemini) },
     ],
     metrics: [
       { label: 'Latencia de Sugerencia', value: '~300ms' },
@@ -88,7 +88,7 @@ export const projects: Project[] = [
       { label: 'Aumento de Leads', value: '+25%' },
       { label: 'Compatibilidad', value: '99.5%' },
     ],
-    demoUrl: '#',
+    demoUrl: 'https://techfixs.netlify.app/',
     codeUrl: 'https://github.com/ITZ-NANO21-MC/TechFix-Web',
     image: { id: 'techfix-solutions' },
   },
@@ -113,8 +113,8 @@ export const projects: Project[] = [
       { label: 'Tasa de Interacción', value: '15%' },
       { label: 'Precisión de Recomendación', value: '90%' },
     ],
-    demoUrl: '#',
-    codeUrl: '#',
+    demoUrl: 'https://techanaltica.netlify.app/',
+    codeUrl: 'https://github.com/ITZ-NANO21-MC/TechAnal-tica',
     image: { id: 'techanalitica' },
   },
   {
@@ -249,7 +249,7 @@ export const blogArticles: BlogArticle[] = [
 ];
 
 export const socialLinks = {
-  whatsapp: "https://wa.me/+584246684134", 
-  github: "https://github.com/ITZ-NANO21-MC", 
-  linkedin: "https://linkedin.com/in/nohel-gonzalez-96aa02339", 
+  whatsapp: "https://wa.me/+584246684134",
+  github: "https://github.com/ITZ-NANO21-MC",
+  linkedin: "https://linkedin.com/in/nohel-gonzalez-96aa02339",
 };
